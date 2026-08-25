@@ -711,6 +711,8 @@ Health check:
 http://localhost:8080/actuator/health
 ```
 
+### Lấy token Telegram
+Xem cụ thể ở mục 8
 ---
 
 ## 6.4. Cấu hình Frontend
@@ -1340,15 +1342,3 @@ npm run build
 
 ---
 
-## Security notes
-
-- Không commit `.env`.
-- Không đưa API key/token vào source code, README hoặc screenshot public.
-- Nếu secret từng bị lộ, revoke/regenerate trước khi tiếp tục sử dụng.
-- Webhook Telegram được bảo vệ bằng `X-Telegram-Bot-Api-Secret-Token`.
-
----
-
-## License
-
-Project được xây dựng phục vụ mục đích technical assessment / demonstration.
