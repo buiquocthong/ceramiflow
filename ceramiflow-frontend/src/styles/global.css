@@ -1,0 +1,64 @@
+:root {
+  color: #2f2b28;
+  background: #f4f2ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; min-width: 320px; min-height: 100%; }
+body { min-height: 100vh; background: #f4f2ef; }
+button, input, textarea { font: inherit; }
+
+.app-shell { min-height: 100vh; background: #f4f2ef; }
+.app-sider { background: #fff !important; border-right: 1px solid #ece7e2; position: sticky !important; top: 0; height: 100vh; }
+.brand { height: 76px; display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #f0ece8; overflow: hidden; }
+.brand-collapsed { justify-content: center; padding-inline: 8px; }
+.mobile-brand { margin: 0; }
+.brand-mark { width: 38px; height: 38px; min-width: 38px; border-radius: 12px; display: grid; place-items: center; color: white; background: linear-gradient(145deg, #9b6a4b, #65412d); font-weight: 800; letter-spacing: -0.6px; box-shadow: 0 6px 16px rgba(122,79,53,.22); }
+.brand-name { display: block; font-size: 16px; color: #3d2c22; }
+.brand-subtitle { font-size: 10px; margin-top: 2px; text-transform: uppercase; letter-spacing: .08em; color: #9d8f86; white-space: nowrap; }
+.app-menu { border-inline-end: 0 !important; padding: 12px 8px; }
+.app-menu .ant-menu-item { margin-block: 5px; }
+.app-header { height: 68px; padding: 0 24px; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ece7e2; position: sticky; top: 0; z-index: 20; }
+.header-title { display: block; }
+.header-subtitle { font-size: 12px; display: block; }
+.app-content { padding: 26px; min-width: 0; }
+.page-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 18px; }
+.page-title { margin: 0 0 2px !important; color: #3b3029 !important; }
+.section-gap { margin-top: 20px; }
+.section-gap-sm { margin-top: 12px; margin-bottom: 12px; }
+.w-full { width: 100% !important; }
+.full-height-card { height: 100%; }
+.metric-card { height: 100%; box-shadow: 0 4px 18px rgba(69,49,37,.04); }
+.metric-card .ant-statistic-content { color: #4f382a; }
+.clickable-row { cursor: pointer; }
+.clickable-row:hover td { background: #fbf7f3 !important; }
+.empty-state { padding: 36px 0; }
+.ai-source-row { margin-bottom: 14px; }
+
+.kanban-scroll { overflow-x: auto; padding-bottom: 8px; }
+.kanban-board { display: grid; grid-template-columns: repeat(9, minmax(258px, 1fr)); gap: 12px; min-width: 2430px; align-items: start; }
+.kanban-column { background: #eeeae6; border-radius: 14px; overflow: hidden; border: 1px solid #e5dfda; }
+.kanban-column-header { background: #faf8f6; border-bottom: 1px solid #e5dfda; padding: 12px 14px; position: sticky; top: 0; }
+.count-pill { min-width: 24px; height: 22px; display: inline-grid; place-items: center; border-radius: 99px; background: #e5ddd6; color: #6b5040; font-size: 12px; font-weight: 700; }
+.kanban-column-body { min-height: 220px; padding: 10px; display: flex; flex-direction: column; gap: 10px; }
+.kanban-card { box-shadow: 0 3px 10px rgba(68,48,37,.05); border: 1px solid #ebe5df; }
+.kanban-card-head, .kanban-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.kanban-product { display: block; font-size: 14px; margin: 8px 0; }
+.kanban-meta { margin-bottom: 8px; }
+.kanban-empty { color: #aaa09a; padding: 28px 8px; text-align: center; font-size: 12px; border: 1px dashed #d8d0c9; border-radius: 10px; }
+
+.ant-card { border-color: #eae5e1; }
+.ant-table-wrapper .ant-table { border-radius: 10px; }
+.ant-tabs-nav { margin-bottom: 14px !important; }
+
+@media (max-width: 768px) {
+  .app-header { padding: 0 12px; }
+  .header-title-wrap { display: none; }
+  .app-content { padding: 16px 12px; }
+  .page-header { align-items: flex-start; flex-direction: column; }
+  .page-header > div:last-child { width: 100%; }
+  .page-header > div:last-child > button { width: 100%; }
+  .page-title { font-size: 24px !important; }
+}
