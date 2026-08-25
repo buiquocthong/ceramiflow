@@ -712,7 +712,9 @@ http://localhost:8080/actuator/health
 ```
 
 ### Lấy token Telegram
+
 Xem cụ thể ở mục 8
+
 ---
 
 ## 6.4. Cấu hình Frontend
