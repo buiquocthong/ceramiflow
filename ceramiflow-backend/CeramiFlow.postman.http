@@ -1,0 +1,35 @@
+### Create order
+POST http://localhost:8080/api/orders
+Content-Type: application/json
+
+{"description":"Đơn 200 Bình gốm họa tiết sen men lam cao 35cm, yêu cầu nung nhiệt độ cao 1280°C, hoàn thành trong 10 ngày"}
+
+### Analyze
+POST http://localhost:8080/api/orders/1/analyze
+
+### Create batch after review/confirm
+POST http://localhost:8080/api/batches/from-order/1?actor=demo
+
+### Complete current stage
+POST http://localhost:8080/api/batches/1/steps/complete
+Content-Type: application/json
+
+{"operator":"worker-01","notes":"Completed normally"}
+
+### QC sample 5% defect -> rework
+POST http://localhost:8080/api/batches/1/qc
+Content-Type: application/json
+
+{"quantityInspected":200,"quantityPassed":190,"quantityFailed":10,"defectType":"Cracked glaze","severity":"HIGH","notes":"Requires rework","operator":"qc-01"}
+
+### Rework from glazing
+POST http://localhost:8080/api/batches/1/rework
+Content-Type: application/json
+
+{"targetStage":"GLAZING","operator":"manager-01","notes":"Re-glaze defective items"}
+
+### Dashboard
+GET http://localhost:8080/api/dashboard/summary
+
+### SSE
+GET http://localhost:8080/api/stream

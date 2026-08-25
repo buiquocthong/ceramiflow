@@ -1,0 +1,51 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ceramiflow-backend
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:ceramiflow}?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Ho_Chi_Minh
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: Asia/Ho_Chi_Minh
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+ceramiflow:
+  ai:
+    enabled: ${AI_ENABLED:true}
+    base-url: ${AI_BASE_URL:https://api.openai.com/v1}
+    api-key: ${AI_API_KEY:}
+    model: ${AI_MODEL:gpt-4o-mini}
+    max-retries: ${AI_MAX_RETRIES:2}
+    retry-backoff-ms: ${AI_RETRY_BACKOFF_MS:800}
+    timeout-seconds: ${AI_TIMEOUT_SECONDS:25}
+  telegram:
+    enabled: ${TELEGRAM_ENABLED:false}
+    bot-token: ${TELEGRAM_BOT_TOKEN:}
+    chat-id: ${TELEGRAM_CHAT_ID:}
+    webhook-secret: ${TELEGRAM_WEBHOOK_SECRET:}
+  workflow:
+    qc-pass-threshold: ${QC_PASS_THRESHOLD:3}
+    qc-rework-threshold: ${QC_REWORK_THRESHOLD:10}
